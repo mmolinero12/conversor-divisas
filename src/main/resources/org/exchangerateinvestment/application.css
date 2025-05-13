@@ -1,0 +1,93 @@
+/* Cambiar el color del fondo de los botones del menú. Dos opciones RGB y HSL */
+
+#menuPrincipalButton {
+    -fx-background-color: rgb(20,21,25)  ; /* -dark-menu-background  */
+}
+
+#graciasButton {
+    -fx-background-color: rgb(20,21,25); /* -dark-menu-background  */
+}
+
+/* Cambiar a un fondo transparente al splitpane */
+
+#splitPane: horizontal  {
+    -fx-background-color: transparent;
+}
+
+#splitPane .split-pane-divider  {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+/* La TableView */
+.table-view {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header-background .label {
+    -fx-background-color: darkcyan;
+    -fx-text-fill: yellow;
+}
+
+.table-view .table-cell {
+    -fx-text-fill: black;
+}
+/*
+.table-row-cell {
+    -fx-background-color: #2e8b5767;
+}
+
+.table-row-cell :odd {
+    -fx-background-color: -fx-table-cell-border-color, #2e8b5767;
+}
+*/
+.table-row-cell :selected {
+    -fx-background-color: #FF69B4;
+}
+
+/* La ventana principal del Chart */
+#dollarTimeChart  .chart-background {
+    -fx-background-color: transparent;
+}
+
+/* La ventana de únicamente la gráfica */
+#dollarTimeChart  .chart-plot-background {
+    -fx-background-color: transparent;
+}
+
+#dollarTimeChart  .chart-title {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+}
+
+#dollarTimeChart  .axis-label {
+    -fx-background-color: transparent;
+    -fx-text-fill: ivory;
+    -fx-font-size: 12px;
+}
+
+#dollarTimeChart  .axis .axis-tick-mark .text {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 10px;
+}
+
+/* Cambiar el color de texto a los elementos de la calculadora */
+
+#valorAConvertirTextField {
+    -fx-text-fill: black ;
+}
+
+#valorConvertidoLabel, #monedaConvertidaLabel {
+    -fx-text-fill: mediumseagreen ;
+}
+
+#monedaAConvertirChoiceBox .list-cell {
+    -fx-text-fill: mediumseagreen ;
+}
+
+
+
+
+

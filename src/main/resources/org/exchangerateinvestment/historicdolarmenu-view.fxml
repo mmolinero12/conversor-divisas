@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="675.0" prefWidth="1202.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.exchangerateinvestment.HistoricDolarMenuController">
+   <children>
+      <ImageView fitHeight="889.0" fitWidth="1202.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/D:/Respaldo%20Mike/Programación/Java%20y%20C++/ChallengesOracleONE/exchangeRateInvestment/src/images/Plantilla3.png" />
+         </image>
+      </ImageView>
+      <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" opacity="0.64" prefHeight="650.0" prefWidth="1188.0" spacing="20.0">
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+         <children>
+            <HBox alignment="TOP_RIGHT" prefHeight="50.0" prefWidth="200.0" spacing="50.0">
+               <children>
+                  <Button fx:id="menuPrincipalButton" mnemonicParsing="false" onAction="#menuPrincipalGo" stylesheets="@application.css" text="Menu Principal" textFill="#0eebb7">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="graciasButton" mnemonicParsing="false" onAction="#GraciasGo" stylesheets="@application.css" text="Gracias" textFill="#0eebb7">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets right="30.0" />
+               </VBox.margin>
+            </HBox>
+            <Label fx:id="messageText" alignment="TOP_LEFT" prefHeight="17.0" prefWidth="1112.0" text="Paso 1: Seleccione el intervalo de fechas  (si se busca la información de un día, las fechas deben ser iguales)." textFill="#6ee4b3">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <SplitPane fx:id="splitPane" dividerPositions="0.5398936170212766" stylesheets="@application.css">
+               <items>
+                  <VBox>
+                     <children>
+                        <GridPane hgap="20.0" minHeight="-Infinity" prefHeight="90.0" vgap="15.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="124.0" minHeight="10.0" prefHeight="47.333343505859375" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="217.0" minHeight="10.0" prefHeight="147.66665649414062" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <DatePicker fx:id="dateFromPicker" onAction="#datePickerFromSelected" promptText="Seleccione la fecha" GridPane.rowIndex="1" />
+                              <DatePicker fx:id="dateToPicker" onAction="#dateToPickerSelected" promptText="Seleccione la fecha" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label fx:id="fromLabel" alignment="CENTER" contentDisplay="CENTER" text="DE:" textFill="WHITE" GridPane.valignment="BASELINE">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="toLabel" text="A:" textFill="WHITE" GridPane.columnIndex="1" GridPane.valignment="BASELINE">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </GridPane>
+                        <HBox fx:id="calculadoraHBox" visible="false">
+                           <children>
+                              <TextField fx:id="valorAConvertirTextField" prefHeight="25.0" prefWidth="134.0" promptText="Introduzca un valor" stylesheets="@application.css" />
+                              <ChoiceBox fx:id="monedaAConvertirChoiceBox" prefWidth="150.0" stylesheets="@application.css" />
+                              <Button fx:id="convertirButton" mnemonicParsing="false" onAction="#convertirButton" text="Convertir -&gt;" />
+                              <Label fx:id="valorConvertidoLabel" alignment="CENTER_RIGHT" contentDisplay="TOP" minWidth="75.0" prefHeight="25.0" prefWidth="90.0" stylesheets="@application.css">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="15.0" />
+                                 </HBox.margin></Label>
+                              <Label fx:id="monedaConvertidaLabel" minWidth="59.0" prefHeight="25.0" prefWidth="59.0" stylesheets="@application.css">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <TableView fx:id="exchangeTable" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#rowClicked" prefHeight="158.0" prefWidth="400.0" stylesheets="@application.css" visible="false">
+                     <columns>
+                        <TableColumn fx:id="dateCol" maxWidth="344.0" minWidth="158.0" prefWidth="219.66668701171875" text="Fecha" />
+                        <TableColumn fx:id="valueCol" maxWidth="440.0" minWidth="56.0" prefWidth="295.33331298828125" text="Precio del Dólar" />
+                     </columns>
+                  </TableView>
+               </items>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </SplitPane>
+            <Button fx:id="parsingButton" alignment="CENTER" onAction="#onParseButtonClick" text="Buscar">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <LineChart fx:id="dollarTimeChart" legendVisible="false" prefHeight="230.0" prefWidth="1148.0" style="-fx-background-color: transparent; -fx-background-radius: 10;" stylesheets="@application.css" title="Tipo de cambio - Dólar Estadounidense" visible="false">
+               <xAxis>
+                  <CategoryAxis fx:id="tiempo" label="Tiempo" side="BOTTOM" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis fx:id="pesosMexicanos" label="MX" side="LEFT" />
+               </yAxis>
+            </LineChart>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

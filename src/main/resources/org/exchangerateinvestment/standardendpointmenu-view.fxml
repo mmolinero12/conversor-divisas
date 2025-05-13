@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="675.0" prefWidth="1202.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.exchangerateinvestment.StandardEndpointMenuController">
+   <children>
+      <ImageView fitHeight="889.0" fitWidth="1202.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/D:/Respaldo%20Mike/Programación/Java%20y%20C++/ChallengesOracleONE/exchangeRateInvestment/src/images/Plantilla3.png" />
+         </image>
+      </ImageView>
+      <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" opacity="0.64" prefHeight="650.0" prefWidth="1188.0" spacing="20.0">
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+         <children>
+            <HBox alignment="TOP_RIGHT" prefHeight="50.0" prefWidth="200.0" spacing="50.0">
+               <children>
+                  <Button fx:id="menuPrincipalButton" mnemonicParsing="false" onAction="#menuPrincipalGo" stylesheets="@application.css" text="Menu Principal" textFill="#0bebbe">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="graciasButton" mnemonicParsing="false" onAction="#GraciasGo" stylesheets="@application.css" text="Gracias" textFill="#0bebbe">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets right="30.0" />
+               </VBox.margin>
+            </HBox>
+            <Label fx:id="messageText" alignment="TOP_LEFT" prefHeight="17.0" prefWidth="1112.0" text="Paso 1: Seleccione una Moneda Base y al menos una Moneda a la que desea convertir (puede seleccionar todas)" textFill="#6ee4b3">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <SplitPane fx:id="splitPane" dividerPositions="0.5398936170212766" stylesheets="@application.css">
+               <items>
+                  <VBox>
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <VBox prefHeight="295.0" prefWidth="278.0" spacing="15.0">
+                                 <children>
+                                    <Label text="Moneda Base" textFill="#39c4d7">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <RadioButton fx:id="cadRadioButton" mnemonicParsing="false" text="Dólar Canadiense (CAD)" textFill="#39c4d7">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="monedaBase" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton fx:id="usdRadioButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Dólar Estadounidense (USD)" textFill="#39c4d7" toggleGroup="$monedaBase">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </RadioButton>
+                                    <RadioButton fx:id="eurRadioButton" layoutX="10.0" layoutY="55.0" mnemonicParsing="false" text="Euro (EUR)" textFill="#39c4d7" toggleGroup="$monedaBase">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </RadioButton>
+                                    <RadioButton fx:id="gbpRadioButton" layoutX="10.0" layoutY="100.0" mnemonicParsing="false" text="Libra Esterlina (GBP)" textFill="#39c4d7" toggleGroup="$monedaBase">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </RadioButton>
+                                    <RadioButton fx:id="mxnRadioButton" layoutX="10.0" layoutY="145.0" mnemonicParsing="false" text="Peso Mexicano (MXN)" textFill="#39c4d7" toggleGroup="$monedaBase">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </RadioButton>
+                                    <RadioButton fx:id="brlRadioButton" layoutX="10.0" layoutY="190.0" mnemonicParsing="false" text="Real Brasileño (BRL)" textFill="#39c4d7" toggleGroup="$monedaBase">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </RadioButton>
+                                    <RadioButton fx:id="cnyRadioButton" layoutX="10.0" layoutY="235.0" mnemonicParsing="false" text="Yuan Chino Renminbi (CNY)" textFill="#39c4d7" toggleGroup="$monedaBase">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </RadioButton>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="295.0" prefWidth="280.0" spacing="15.0">
+                                 <children>
+                                    <Label text="Convertir a:" textFill="#39c4d7">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <CheckBox fx:id="cadCheckBox" mnemonicParsing="false" text="Dólar Canadiense (CAD)" textFill="#39c4d7">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="20.0" />
+                                       </padding>
+                                    </CheckBox>
+                                    <CheckBox fx:id="usdCheckBox" layoutX="10.0" layoutY="35.0" mnemonicParsing="false" text="Dólar Estadounidense (USD)" textFill="#39c4d7">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="20.0" />
+                                       </padding>
+                                    </CheckBox>
+                                    <CheckBox fx:id="eurCheckBox" layoutX="10.0" layoutY="100.0" mnemonicParsing="false" text="Euro (EUR)" textFill="#39c4d7">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="20.0" />
+                                       </padding>
+                                    </CheckBox>
+                                    <CheckBox fx:id="gbpCheckBox" layoutX="10.0" layoutY="145.0" mnemonicParsing="false" text="Libra Esterlina (GBP)" textFill="#39c4d7">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="20.0" />
+                                       </padding>
+                                    </CheckBox>
+                                    <CheckBox fx:id="mxnCheckBox" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Peso Mexicano (MXN)" textFill="#39c4d7">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="20.0" />
+                                       </padding>
+                                    </CheckBox>
+                                    <CheckBox fx:id="brlCheckBox" layoutX="10.0" layoutY="235.0" mnemonicParsing="false" text="Real Brasileño (BRL)" textFill="#39c4d7">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="20.0" />
+                                       </padding>
+                                    </CheckBox>
+                                    <CheckBox fx:id="cnyCheckBox" layoutX="10.0" layoutY="190.0" mnemonicParsing="false" text="Yuan Chino Renminbi (CNY)" textFill="#39c4d7">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="20.0" />
+                                       </padding>
+                                    </CheckBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox fx:id="calculadoraHBox" visible="false">
+                           <children>
+                              <TextField fx:id="valorAConvertirTextField" prefHeight="25.0" prefWidth="134.0" promptText="Introduzca un valor" stylesheets="@application.css" />
+                              <Label fx:id="monedaAConvertirLabel" minWidth="59.0" prefHeight="25.0" prefWidth="59.0" stylesheets="@application.css" textFill="MEDIUMSEAGREEN">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="convertirButton" mnemonicParsing="false" onAction="#convertirButton" text="Convertir -&gt;" />
+                              <Label fx:id="valorConvertidoLabel" alignment="CENTER_RIGHT" contentDisplay="TOP" minWidth="75.0" prefHeight="25.0" prefWidth="90.0" stylesheets="@application.css" textFill="MEDIUMSEAGREEN">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="15.0" right="5.0" />
+                                 </HBox.margin></Label>
+                              <ChoiceBox fx:id="monedaAConvertirChoiceBox" prefWidth="150.0" stylesheets="@application.css" />
+                           </children>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <TableView fx:id="exchangeTable" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#rowClicked" prefHeight="400.0" prefWidth="400.0">
+                     <columns>
+                        <TableColumn fx:id="fromCol" maxWidth="344.0" minWidth="50.0" prefWidth="171.0" text="DE:" />
+                        <TableColumn fx:id="toValueCol" prefWidth="171.0" text="A:" />
+                        <TableColumn fx:id="toMonedaCol" prefWidth="173.0" text="MONEDA" />
+                     </columns>
+                  </TableView>
+               </items>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </SplitPane>
+            <Button fx:id="parsingButton" alignment="CENTER" onAction="#onParseButtonClick" text="Buscar">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
