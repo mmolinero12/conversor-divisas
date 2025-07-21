@@ -308,7 +308,8 @@ public class StandardEndpointMenuController implements  Initializable {
 
         // https://v6.exchangerate-api.com/v6/YOUR-API-KEY/latest/USD
 
-        String link = "https://v6.exchangerate-api.com/v6/ec9468fdbee96c3a80b5f590/latest/" + monedaReferencia;
+        String exchangeApiKey = System.getenv("EXCHANGE_APIKEY");
+        String link = "https://v6.exchangerate-api.com/v6/" + exchangeApiKey +"/latest/" + monedaReferencia;
 
         HttpClient client = HttpClient.newHttpClient();
 

@@ -121,7 +121,7 @@ public class HistoricDolarMenuController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
-
+        System.out.println("Wooooow");
         // Inicialización de las columnas de la TableView
         dateCol.setCellValueFactory(new PropertyValueFactory<ExchangeRate, String>("date"));
         valueCol.setCellValueFactory(new PropertyValueFactory<ExchangeRate, Double>("value"));
@@ -261,9 +261,10 @@ public class HistoricDolarMenuController implements Initializable {
         SimpleDateFormat formatoNuevo = new SimpleDateFormat("yyyy-MM-dd");
         Date date = null;
 
+        String banxicoApiKey = System.getenv("EXCHANGE_APIKEY");
         String link = "https://www.banxico.org.mx/SieAPIRest/service/v1/series/" +
                 "SF63528/datos/"+ dateFromPattern + "/" + dateToPattern  +
-                "?token=9930eacab926ac51e9edf4b101bb577fd255f27443ff0cdfab3f19e035163a04";
+                "?token=" + banxicoApiKey;
 
 
         HttpClient client = HttpClient.newHttpClient();

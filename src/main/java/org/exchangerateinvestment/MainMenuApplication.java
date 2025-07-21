@@ -12,7 +12,8 @@ public class MainMenuApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(MainMenuApplication.class.getResource("mainmenu-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainMenuApplication.class
+                .getResource("mainmenu-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Exchange Rate Investment App!");
         // Ruta relativa desde la carpeta src/main/resources
@@ -23,9 +24,7 @@ public class MainMenuApplication extends Application {
         stage.show();
     }
 
-
     public static void main(String[] args) {
         launch();
     }
-
 }

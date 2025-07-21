@@ -14,7 +14,7 @@ module org.exchangerateinvestment {
     opens org.modelo to javafx.fxml;
     exports org.modelo;
 
-    // donde se localizar los Applications y Controllers JavaFX
+    // donde se localizan los Applications y Controllers JavaFX
     opens org.exchangerateinvestment to javafx.fxml;
     exports org.exchangerateinvestment;
 

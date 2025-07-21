@@ -8,6 +8,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+// Muy probablemente NO se reguiera este código. El objetivo de existir es solamente
+// para pruebas.
+
 public class StandardEndpointMenuApplication extends Application {
     @Override
     public void start(Stage multipleCurrenciesMenuStage) throws IOException {
